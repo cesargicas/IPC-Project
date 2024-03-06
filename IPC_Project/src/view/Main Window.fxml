@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#makeFullScreen" prefHeight="540.0" prefWidth="960.0" style="-fx-background-image: url(&quot;/resources/images/wallapepr.jpg&quot;); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowController">
+   <children>
+      <MenuBar fx:id="menuBarCenter">
+         <menus>
+            <Menu text="Help">
+               <items>
+                  <MenuItem fx:id="infoButton" mnemonicParsing="false" onAction="#infoPressed" text="About us" />
+               </items>
+            </Menu>
+            <Menu text="Options">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#setFullscreen" text="Set fullscreen" />
+                  <MenuItem fx:id="exitButton" mnemonicParsing="false" onAction="#isExited" text="Exit" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <VBox fx:id="vBoxCenter" alignment="CENTER_LEFT" prefHeight="520.0" prefWidth="960.0" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox alignment="TOP_CENTER" prefHeight="130.0" prefWidth="757.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="55.0" fitWidth="385.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../resources/images/greenBall%20blanco.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" right="30.0" top="5.0" />
+                     </HBox.margin>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="130.0" prefWidth="559.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="145.0" prefWidth="140.0" spacing="10.0">
+                           <children>
+                              <Circle fx:id="profilePicContainer" fill="DODGERBLUE" radius="55.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect></Circle>
+                              <Button fx:id="configurationButton" mnemonicParsing="false" onAction="#loadConfig" prefHeight="25.0" prefWidth="132.0" style="-fx-background-color: #adf7af; -fx-cursor: hand;" text="Profile Configuration" textFill="#2d752f">
+                                 <font>
+                                    <Font name="Calibri" size="13.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets right="20.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+               <opaqueInsets>
+                  <Insets right="10.0" />
+               </opaqueInsets>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="397.0" prefWidth="960.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="368.0" prefWidth="443.0" spacing="20.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="labelWelcome" prefHeight="39.0" prefWidth="443.0" text="WELCOME" textFill="WHITE" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="Century Gothic" size="31.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="426.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Button fx:id="bookButton" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#loadBook" prefHeight="55.0" prefWidth="508.0" style="-fx-background-color: WHITE; -fx-cursor: hand;" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                 <graphic>
+                                    <ImageView fitHeight="40.0" fitWidth="230.0" pickOnBounds="true" preserveRatio="true" translateY="4.0">
+                                       <image>
+                                          <Image url="@../resources/images/Book%20a%20court.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="426.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Button fx:id="myBookingsButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#loadBookings" prefHeight="55.0" prefWidth="508.0" style="-fx-background-color: WHITE; -fx-cursor: hand;" textFill="#2d752f" HBox.hgrow="ALWAYS">
+                                 <graphic>
+                                    <ImageView fitHeight="47.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true" translateY="4.0">
+                                       <image>
+                                          <Image url="@../resources/images/My%20reservations.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="239.0" prefHeight="59.0" prefWidth="426.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Button fx:id="checkAvailability" alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#loadCheckAvailability" prefHeight="55.0" prefWidth="508.0" style="-fx-background-color: WHITE; -fx-cursor: hand;" textFill="#2d752f" HBox.hgrow="ALWAYS">
+                                 <graphic>
+                                    <ImageView fitHeight="56.0" fitWidth="241.0" pickOnBounds="true" preserveRatio="true" translateY="5.0">
+                                       <image>
+                                          <Image url="@../resources/images/75e04c6bfc239bf89bd4afb81931bc6d.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="50.0" left="30.0" />
+                     </padding>
+                  </VBox>
+                  <ImageView fitHeight="366.0" fitWidth="346.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <HBox.margin>
+                        <Insets left="170.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../resources/images/imagen%20teniis.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>
